@@ -29,5 +29,5 @@ data:
                        604800 )       ; Negative Cache TTL
 
     @       IN      NS      ns1.dmm.tt.pk.
-    ns1     IN      A       10.0.0.10
-    www     IN      A       10.0.0.20
+    ns1     IN      A       10.202.99.61
+    traefik     IN      A       10.202.99.60
