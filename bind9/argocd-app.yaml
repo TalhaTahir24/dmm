@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.dev/TalhaTahir24/dmm.git'
+    repoURL: 'https://github.com/TalhaTahir24/dmm.git'
     targetRevision: dns
-    path: bind9-deployment
+    path: bind9
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
