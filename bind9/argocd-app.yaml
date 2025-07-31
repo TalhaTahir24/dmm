@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bind9-dns
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/TalhaTahir24/dmm.git'
+    targetRevision: dns
+    path: bind9
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
