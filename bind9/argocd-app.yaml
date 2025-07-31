@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/TalhaTahir24/dmm.git'
-    targetRevision: dns
+    targetRevision: HEAD
     path: bind9
   destination:
     server: 'https://kubernetes.default.svc'
