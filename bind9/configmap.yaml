@@ -5,7 +5,7 @@ metadata:
 data:
   named.conf: |
     options {
-      directory "/etc/bind";
+      directory "/var/cache/bind";
       allow-query { any; };
       recursion yes;
       forwarders {
@@ -16,7 +16,7 @@ data:
 
     zone "dmm.tt.pk" {
       type master;
-      file "/etc/bind/db.dmm.tt.pk";
+      file "/var/cache/bind/db.dmm.tt.pk";
     };
 
   db.dmm.tt.pk: |

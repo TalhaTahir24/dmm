@@ -22,8 +22,25 @@ spec:
           protocol: TCP
         volumeMounts:
         - name: bind9-config
-          mountPath: /etc/bind
+          mountPath: /etc/bind           # ConfigMap
+          readOnly: true
+        - name: bind9-data
+          mountPath: /var/cache/bind     # PVC
       volumes:
       - name: bind9-config
         configMap:
           name: bind9-config
+      - name: bind9-data
+        persistentVolumeClaim:
+          claimName: bind9-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: bind9-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
